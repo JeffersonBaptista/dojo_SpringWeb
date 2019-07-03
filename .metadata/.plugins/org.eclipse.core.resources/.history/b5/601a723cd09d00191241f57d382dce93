@@ -1,0 +1,19 @@
+<!DOCTYPE >
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+	<h3>Lista de Comentario:</h3>
+	<div th:each="pessoa : ${pessoas} ">
+		<a th:href="@{/detalhes/{id}(id=${pessoa.id}) }"><p th:text="${pessoa.nome}"></p></a>
+		<p th:text="${pessoa.numeroTelefone}"></p>
+		<p th:text="${pessoa.idade}"></p>
+
+
+</body>
+</html>

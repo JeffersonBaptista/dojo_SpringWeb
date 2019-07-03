@@ -1,0 +1,18 @@
+package com.br.dojo.usuario.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.br.dojo.usuario.models.UsuarioModel;
+
+@Service
+public class UsuarioService {
+
+private List<UsuarioModel> listaUsuario = new ArrayList<UsuarioModel>();
+
+
+	
+	
+}

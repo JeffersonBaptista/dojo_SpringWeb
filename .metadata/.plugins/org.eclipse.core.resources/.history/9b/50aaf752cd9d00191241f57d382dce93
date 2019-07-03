@@ -1,0 +1,5 @@
+package com.br.dojo.usuario.models;
+
+public class UsuarioModel {
+
+}
