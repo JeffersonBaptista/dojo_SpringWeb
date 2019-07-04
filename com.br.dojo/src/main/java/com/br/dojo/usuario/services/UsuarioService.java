@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.w3c.dom.ls.LSInput;
 
 import com.br.dojo.usuario.models.UsuarioModel;
 
@@ -18,10 +19,10 @@ public class UsuarioService {
 		return listaUsuario;
 	}
 
-	public String salvarComentario(UsuarioModel pessoa) {
+	public String salvarComentario(String foto, String nome, int idade, String estadoCivil, String comentario) {
 		
-		if(pessoa.getIdade()>= 18) {
-		listaUsuario.add(pessoa);
+		if(idade>= 18) {
+		listaUsuario.add(new UsuarioModel(listaUsuario.size(),foto,nome,idade,estadoCivil,comentario));
 		return "redirect:/";
 		}else {
 			return "redirect:barrado";
@@ -39,11 +40,16 @@ public class UsuarioService {
 		}
 		return usuario;
 	}
-	// private int id;
-	// private String foto;
-	// private String nome;
-	// private int idade;
-	// private String estadoCivil;
-	// private String comentario;
+	public void excluirPost(int id) {
+		for (UsuarioModel usuario : listaUsuario) {
+			if (usuario.getId() == id) {
+				listaUsuario.remove(usuario);
+				
+			}
+		}
+		
+		
+	}
+
 
 }

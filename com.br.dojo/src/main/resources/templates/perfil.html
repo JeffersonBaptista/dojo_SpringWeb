@@ -7,14 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+	<div>
+	<h2>Perfil</h2>
+	</div>
     <div>
-    
-    <img src ="#" th:attr=" src=@{${comentario.foto}}">
-	<p th:text="${'Nome: '+comentario.nome}"></p>
-	<p th:text="${'Idade: '+comentario.idade}"></p>
-	<p th:text="${'Estado Civil: '+comentario.estadoCivil}"></p>
-	<p th:text="${'Comentário: '+comentario.comentario}"></p>
+ 
+    	<img src ="#" th:attr=" src=@{${comentario.foto}}">
+		<p th:text="${'Nome: '+comentario.nome}"></p>
+		<p th:text="${'Idade: '+comentario.idade}"></p>
+		<p th:text="${'Estado Civil: '+comentario.estadoCivil}"></p>
+		<p th:text="${'Comentário: '+comentario.comentario}"></p>
 	</div>	
+	<div>
+		<a th:href="@{/excluir/{id}(id=${comentario.id}) }"><p>Excluir post</p></a>
+	</div>
 
 
 </body>

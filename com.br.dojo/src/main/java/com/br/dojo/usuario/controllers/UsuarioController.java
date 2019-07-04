@@ -28,12 +28,21 @@ public class UsuarioController {
 		modelAndView.addObject("comentario", usuarioService.buscarUsuario(id));
 		return modelAndView;
 	}
+	@GetMapping("/excluir/{id}")
+	public String excluirPost(@PathVariable int id) {	
+		usuarioService.excluirPost(id);
+		return "redirect:/";
+		
+//		modelAndView.addObject("comentario", usuarioService.excluirPost(id));
+//		return modelAndView;
+	}
 	
 	@GetMapping("/barrado")
 	public ModelAndView barrado() {
 		ModelAndView modelAndView = new ModelAndView("barrado.html");
 		return modelAndView;
 	}
+	
 
 	@GetMapping("/comentar")
 	public ModelAndView cadastro() {
@@ -42,8 +51,8 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/comentar")
-	public String salvarPessoa(UsuarioModel usuario) {
-		return usuarioService.salvarComentario(usuario);
+	public String salvarPessoa(String foto, String nome, int idade, String estadoCivil, String comentario) {
+		return usuarioService.salvarComentario(foto, nome, idade, estadoCivil, comentario);
 		
 	}
 
