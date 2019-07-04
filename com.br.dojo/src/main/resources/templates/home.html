@@ -12,10 +12,11 @@
 	<div th:each="comentario : ${comentarios} ">
 		<a th:href="@{/detalhes/{id}(id=${comentario.id}) }"><p th:text="${comentario.nome}"></p></a>
 		<p th:text="${comentario.comentario}"></p>
+		<p>______________________________</p>
 	</div>	
-<div>
-	<a href="/comentar">Adicionar comentario</a>
-</div>
+	<div>
+		<a href="/comentar">Adicionar comentario</a>
+	</div>
 
 </body>
 </html>
