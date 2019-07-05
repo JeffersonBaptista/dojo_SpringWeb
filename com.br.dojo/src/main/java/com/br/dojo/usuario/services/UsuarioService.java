@@ -39,12 +39,13 @@ public class UsuarioService {
 	}
 
 	public String excluirPost(int id) {
+		UsuarioModel usuario2 = null;
 		for (UsuarioModel usuario : listaUsuario) {
-			if (usuario.getId() == id) {
-				listaUsuario.remove(usuario);
-
+			if (id == usuario.getId()) {
+				usuario2 = usuario;
 			}
 		}
+		listaUsuario.remove(usuario2);
 		return "redirect:/";
 
 	}
